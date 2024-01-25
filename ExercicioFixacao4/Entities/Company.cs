@@ -1,21 +1,19 @@
 ﻿
 namespace ExercicioFixacao4.Entities
 {
-    internal class LegalPerson : Person
+    internal class Company : TaxPayer
     {
-        public int Employees { get; set; }
+        public int NumberOfEmployees { get; set; }
 
-        public LegalPerson() { }
-
-        public LegalPerson(string name, double annualIncome, int employees) : base(name, annualIncome)
+        public Company(string name, double annualIncome, int employees) : base(name, annualIncome)
         {
-            Employees = employees;
+            NumberOfEmployees = employees;
         }
 
         public override double Tax()
         {
             int percentual;
-            if(Employees > 10)
+            if(NumberOfEmployees > 10)
             {
                 percentual = 14;
             }

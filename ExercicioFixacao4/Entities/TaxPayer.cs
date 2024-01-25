@@ -6,14 +6,12 @@ using System.Threading.Tasks;
 
 namespace ExercicioFixacao4.Entities
 {
-    internal abstract class Person
+    internal abstract class TaxPayer
     {
         public string Name { get; set; }
         public double AnnualIncome { get; set; }
 
-        public Person() { }
-
-        protected Person(string name, double annualIncome)
+        protected TaxPayer(string name, double annualIncome)
         {
             Name = name;
             AnnualIncome = annualIncome;

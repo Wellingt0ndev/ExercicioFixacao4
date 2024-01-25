@@ -1,6 +1,6 @@
 ﻿using ExercicioFixacao4.Entities;
 using System.Globalization;
-List<Person> list = new List<Person>();
+List<TaxPayer> list = new List<TaxPayer>();
 Console.Write("Enter the number of tax payers: ");
 int n = int.Parse(Console.ReadLine());
 for (int i = 1; i <= n; i++)
@@ -14,16 +14,16 @@ for (int i = 1; i <= n; i++)
     double annualIncome = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
     if(ch == 'i')
     {
-        Console.Write("Health spending: ");
-        double healthSpending = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
-        NaturalPerson naturalPerson = new NaturalPerson(name,annualIncome,healthSpending);
-        list.Add(naturalPerson);
+        Console.Write("Health expenditures: ");
+        double healthExpenditures = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+        Individual individual = new Individual(name,annualIncome,healthExpenditures);
+        list.Add(individual);
     }else if(ch == 'c')
     {
         Console.Write("Number of employees: ");
         int employees = int.Parse(Console.ReadLine());
-        LegalPerson legalPerson = new LegalPerson(name, annualIncome, employees);
-        list.Add(legalPerson);
+        Company company = new Company(name, annualIncome, employees);
+        list.Add(company);
     }
 }
 Console.WriteLine();
